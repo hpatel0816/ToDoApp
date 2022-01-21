@@ -10,7 +10,7 @@ import requests
 @app.route('/')
 @app.route('/main')
 def mainPage():
-    return render_template("index.html", title='Main')
+    return render_template("mainPage.html", title='Main')
 
 
 @app.route('/signup', methods=['GET', 'POST'])

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block pageContent %}
+    <div class='container-box m-2 mt-4'>
+        <h3 class='m-3'>Your Tasks</h3>
+        <hr>
+        <div class='task-list p-1 m-2'>
+           {% for task in tasks %}
+                <div class='task mb-4' style="background-color: {{ categories[task.category] }};">
+                    <div class='task-content'>
+                        <p id=task-title>{{ task.title }} ({{task.category}})</p>
+                        <p id='task-deadline' class='m-1'>{{ task.deadline }}</p>
+                        <p class='m-1'>{{ task.description }}</p>
+                    </div>
+                    <div class="task-actions">
+                        <a href="{{ url_for('complete', taskId=task.id) }}"><button class="task-btn"><image class='logo-img' src="{{ url_for('static', filename='images/doneLogo.png') }}"></image></button></a>
+                        <a href="{{ url_for('updateTask', taskId=task.id) }}"><button class="task-btn"><image class='logo-img' src="{{ url_for('static', filename='images/editLogo.png') }}"></image></button></a>
+                        <a href="{{ url_for('delete', taskId=task.id) }}"><button class="task-btn"><image class='logo-img' src="{{ url_for('static', filename='images/deleteLogo.png') }}"></image></button></a>
+                    </div>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+{% endblock pageContent %}

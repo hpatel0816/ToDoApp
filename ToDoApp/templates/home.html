@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block pageContent %}
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}"/>-->
+    <div class='container'>
+        <div class='dashboard p-1'>
+            <div class='greet-box'>
+                <image class='user-icon' src="{{ url_for('static', filename='images/user.png') }}"></image>
+                <div id='msg-div'>
+                    <p id='welcome-msg'>Hi {{ current_user.name }}!</p>
+                    <p>Welcome back to your task manager.</p>
+                </div>  
+            </div>
+            <div class='quote-div'>
+                <h5>Today's Inspiration:</h5>
+                <p id='quote'>"{{ quote[0]['q']}}" - <span id='author'>{{ quote[0]["a"]}}</span></p>
+            </div>
+        </div>
+        <div class='btm-container'>
+            <div class='data-graph'>
+                <canvas id="myChart" width="300" height="300"></canvas>
+            </div>
+            <div class='task-box'>
+                <h5>Upcoming Tasks</h5><hr>
+               {% for task in upcomingTasks%}
+                    <div class='upcoming-task'>
+                        <p class='upcoming-task-title'>{{task.title}}</p>
+                        <p class='upcoming-task-deadline'>{{task.deadline}}</p>
+                    </div>
+               {% endfor%}
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+       var chartData = {
+        labels: ['Completed Tasks', 'Pending Tasks'],
+        datasets: [{
+            label: 'Pie chart',
+            data: [{{ completedTasks }}, {{ pendingTasks }}],
+            spanGaps: false,
+            backgroundColor: ['#00A86B', '#D4181D'],
+            }]
+        }
+       // get chart canvas
+       var ctx = document.getElementById("myChart").getContext("2d");
+       // create the chart using the chart canvas
+       var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: {
+         title: {
+          display: true,
+          text: 'Tasks at a glance',
+         },
+         maintainAspectRatio: false,
+        }
+       });
+    </script>
+
+{% endblock pageContent %}

@@ -1,0 +1,17 @@
+{% block pageContent %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mainPage.css') }}"/>
+    <div class='nav-bar'>
+        <div id='left-container'>
+            <p id='appName'>ToDo App</p>
+        </div>
+        <div id='right-container'>
+            <a href="{{ url_for('login')}}"><button id='login-btn' >Login</button></a>
+            <a href="{{ url_for('signup')}}"><button id='signUp-btn'>Sign Up</button></a>
+        </div>
+    </div>
+
+    <div id='welcome-msg'>
+        <p id='msg-title'>Welcome to the ToDo App.</p>
+        <p id='msg-txt'>Get stuff done effectively.</p>
+    </div>
+{% endblock pageContent%}

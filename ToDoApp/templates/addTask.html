@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block pageContent %}
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}"/>-->
+    <div class='container-box m-5'>
+        <div class="content-section m-auto py-2 px-2">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group mb-3">
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+    
+                    <div class="form-group mb-2">
+                        {{ form.title.label(class="form-control-label mb-2") }}
+                        {% if form.title.errors %}
+                            {{ form.title(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.title.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.title(class="form-control form-control-lg", placeholder="Eg. Practice for soccer.") }}
+                        {% endif %}
+                    </div>
+    
+                    <div class="form-group mb-2">
+                        {{ form.category.label(class="form-control-label mb-2") }}
+                        {% if form.category.errors %}
+                            {{ form.category(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.category.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.category(class="form-control form-control-lg", placeholder="Eg. Sports") }}
+                        {% endif %}
+                    </div>
+    
+                    
+                    <div class="form-group mb-2">
+                        {{ form.deadline.label(class="form-control-label mb-2") }}
+                        {% if form.deadline.errors %}
+                            {{ form.deadline(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.deadline.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.deadline(class="form-control form-control-lg", placeholder="YYYY-MM-DD") }}
+                        {% endif %}
+                    </div>
+    
+                    <div class="form-group mb-2">
+                        {{ form.description.label(class="form-control-label mb-2") }}
+                        {% if form.description.errors %}
+                            {{ form.description(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.description.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.description(class="form-control form-control-lg", placeholder="Your task description goes here.") }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                
+                <div class="form-group mb-2">
+                    {{ form.submit(class="btn btn-outline-primary") }}
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock pageContent %}

@@ -1,0 +1,222 @@
+html, body {
+    height: 100vh;
+}
+
+.msg-box2 {
+    width: 500px;
+    text-align: center;
+}
+
+.side-bar {
+    height: 100vh;
+    flex: 1;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+.nav-link {
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color:azure;
+    background-color: crimson;
+}
+
+.active {
+    background-color: crimson;
+}
+
+.page-content {
+    height: 100vh;
+    flex: 6;
+    overflow-y: auto;
+}
+
+.msg-box {
+    width: 500px;
+    text-align: center;
+    height: 20px;
+}
+
+.container {
+    margin: 0px 10px;
+    margin-top: 15px;
+    width: 98%;
+    height:94%;
+}
+
+.dashboard {
+    height: 23%;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+}
+
+.greet-box {
+    margin: 15px;
+    margin-left: 18px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 38%;
+    background-color: #6ECAC9;
+    display: flex;
+    border-radius: 20px;
+}
+
+.user-icon {
+    width: 70px;
+    height: 70px;
+    margin: 5px 10px;
+}
+
+#msg-div {
+    width: fit-content;
+    margin-left: 5px;
+    padding-top: 10px;
+}
+#welcome-msg {
+    width: fit-content;
+    font-size: x-large;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.quote-div {
+    margin: 15px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    width: 62%;
+    background-color:  #9FDCDB;
+    border-radius: 20px;
+}
+
+#quote {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#author {
+    font-weight: 600;
+}
+
+.btm-container {
+    height: 73%;
+    width: 100%;
+    padding: 15px 0px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.data-graph {
+    height: 90%;
+    width: 50%;
+    float: left;
+    margin-left: 20px;
+}
+
+
+.task-box {
+    height: 100%;
+    width: 38%;
+    float: right;
+    background-color: #0A7574;
+    color: aliceblue;
+    padding: 10px;
+    padding-left: 18px;
+    padding-top: 18px;
+    border-radius: 20px;
+    margin-right: 40px;
+}
+
+.upcoming-task {
+    width: 100%;
+}
+
+.upcoming-task-title {
+    width: 70%;
+    margin: 3px 8px;
+    float: left;
+}
+
+.upcoming-task-deadline {
+    width: 20%;
+    margin: 3px 8px;
+    float: right;
+    font-weight: 500;
+    text-align: right;
+}
+
+.content-section {
+    width: 500px;
+    height: fit-content;
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding: 10px;
+}
+
+.task {
+    margin: 10px;
+    padding: 8px 15px;
+    /*border: 2px solid black;*/
+    border-radius: 10px;
+    height: 125px;
+    font-size: 15px;
+}
+
+.task:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 20px rgba(88, 86, 86, 0.2);
+}
+
+#task-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#task-deadline {
+    font-size: 13px;
+}
+
+.task-content {
+    float: left;
+    color: azure;
+}
+
+.task-actions {
+    float: right;
+}
+
+.task-btn {
+    font-size: 10px;
+    border: none;
+    padding: 2px;
+    border-radius: 3px;
+    background-color: transparent;
+    color: azure;
+}
+
+.task-btn:hover {
+    transform: scale(1.2);
+}
+
+.logo-img {
+    width: 18px;
+    height: 18px;
+}
+
+.logo-img :hover{
+    transform: scale(1.2);
+}

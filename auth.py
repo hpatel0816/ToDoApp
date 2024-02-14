@@ -1,6 +1,6 @@
 from flask import request
 from functools import wraps
-from security import secretKey
+from ToDoApp.security import secretKey
 import datetime
 import jwt
 from bson.objectid import ObjectId

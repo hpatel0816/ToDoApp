@@ -1,14 +1,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from flask_login import LoginManager 
+from flask_login import LoginManager
+from security import SECRET_KEY, DB_URI
 
 app = Flask(__name__)
 
 #Secret Key for server
-app.config['SECRET_KEY'] = 'hyy6749kj9014hbshy8livc11h74gst5'
+app.config['SECRET_KEY'] = SECRET_KEY
 #SQLAlchemy database path
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///appDatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
 
 #Create db
 db = SQLAlchemy(app)
